@@ -33,7 +33,8 @@ jobs:
         run: |
           mkdir build
           cd build
-          qmake CONFIG+=release ../samplebrain.pro
+                    QMAKE=$(command -v qmake || command -v qmake-qt5)
+          $QMAKE CONFIG+=release ../samplebrain.pro
           mingw32-make -j2
       - name: Package
         run: |
