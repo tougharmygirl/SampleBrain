@@ -29,6 +29,7 @@ jobs:
         run: |
           sed -i '/^ICON/d; s/ -ldl//' samplebrain.pro
           echo 'LIBS += -lws2_32' >> samplebrain.pro
+          echo 'QMAKE_CXXFLAGS += -fpermissive' >> samplebrain.pro
       - name: Build
         run: |
           mkdir build
